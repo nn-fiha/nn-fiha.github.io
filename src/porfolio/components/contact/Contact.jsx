@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ScholarIcon from '../icons/ScholarIcon';
 
 const contactMethods = [
   {
@@ -9,6 +10,12 @@ const contactMethods = [
     label: 'Email',
     value: 'nnfiha2000@gmail.com',
     href: 'mailto:nnfiha2000@gmail.com',
+  },
+  {
+    icon: 'bx bx-envelope',
+    label: 'Academic Email',
+    value: 'fiha.stu2018@juniv.edu',
+    href: 'mailto:fiha.stu2018@juniv.edu',
   },
   {
     icon: 'bx bxl-linkedin',
@@ -27,8 +34,7 @@ const socials = [
   { icon: 'bx bxl-github', href: 'https://github.com/nn-fiha', label: 'GitHub' },
   { icon: 'bx bxl-linkedin', href: 'https://www.linkedin.com/in/nnfiha/', label: 'LinkedIn' },
   { icon: 'bx bxl-twitter', href: 'https://twitter.com/nn_fiha', label: 'Twitter' },
-  { icon: 'bx bxl-instagram', href: 'https://www.instagram.com/nn_fiha/', label: 'Instagram' },
-  { icon: 'bx bxl-facebook', href: 'https://www.facebook.com/nnfiha', label: 'Facebook' },
+  { svg: true, href: 'https://scholar.google.com/citations?hl=en&user=EGe-L9cAAAAJ', label: 'Google Scholar' },
 ];
 
 const Contact = () => {
@@ -55,7 +61,7 @@ const Contact = () => {
           {/* Left: contact methods */}
           <div className='md:col-span-2 text-left'>
             <h3 className='text-xl font-bold text-slate-900 dark:text-white mb-3'>Let's connect</h3>
-            <p className='text-sm text-gray-700 dark:text-slate-400 leading-relaxed mb-8'>
+            <p className='text-sm text-slate-800 dark:text-slate-400 leading-relaxed mb-8'>
               Have a question, an opportunity, or just want to say hi? Drop a message and I'll get back to you.
             </p>
 
@@ -94,7 +100,7 @@ const Contact = () => {
                     aria-label={s.label}
                     className='w-9 h-9 inline-flex items-center justify-center rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-700 hover:text-white dark:hover:bg-slate-200 dark:hover:text-slate-900 transition-colors'
                   >
-                    <i className={`${s.icon} text-lg`}></i>
+                    {s.svg ? <ScholarIcon /> : <i className={`${s.icon} text-lg`}></i>}
                   </a>
                 ))}
               </div>

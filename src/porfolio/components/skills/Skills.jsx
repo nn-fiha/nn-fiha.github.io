@@ -87,7 +87,7 @@ const Skills = () => {
                     alt={skill.name}
                     className='w-12 h-12 object-contain group-hover:scale-110 transition-transform'
                   />
-                  <h4 className='text-xs font-medium mt-2 text-gray-800 dark:text-slate-200'>{skill.name}</h4>
+                  <h4 className='text-xs font-medium mt-2 text-slate-800 dark:text-slate-200'>{skill.name}</h4>
                   <LevelDots level={skill.level} />
                 </div>
               ))}

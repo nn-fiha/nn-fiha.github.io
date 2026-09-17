@@ -3,18 +3,18 @@ import React from 'react'
 const experiences = [
   {
     role: 'SQA Engineer',
-    company: 'Zelf Technologies Inc.',
+    company: 'Zelf AI',
     companyUrl: 'https://www.hellozelf.com/',
     location: 'Brooklyn, New York, USA',
     period: 'Dec 2024 – Present',
     current: true,
     logo: process.env.PUBLIC_URL + '/images/zelflogo-Cv6SuQ3l.png',
     bullets: [
-      'Conducted functional, regression, smoke, sanity, and user acceptance testing to ensure high-quality software delivery.',
-      'Investigated and analyzed issues to identify the root cause of bugs, ensuring faster resolution and preventing recurrence.',
-      'Reported, tracked, and managed bugs effectively using Jira, maintaining clear communication with the development team.',
-      'Developed and maintained detailed test cases to streamline testing processes and improve test coverage.',
-      'Worked cross-functionally with developers and stakeholders to align on project goals and ensure seamless delivery of features.',
+      'Conduct functional, regression, smoke, sanity, and user acceptance testing to ensure high-quality software delivery.',
+      'Investigate and analyze issues to identify the root cause of bugs, ensuring faster resolution and preventing recurrence.',
+      'Report, track, and manage bugs effectively using Jira, maintaining clear communication with the development team.',
+      'Develop and maintain detailed test cases to streamline testing processes and improve test coverage.',
+      'Work cross-functionally with developers and stakeholders to align on project goals and ensure seamless delivery of features.',
     ],
   },
   {
@@ -75,7 +75,7 @@ const Experience = () => {
                   </span>
                 </div>
 
-                <ul className='space-y-2 text-sm text-gray-700 dark:text-slate-300'>
+                <ul className='space-y-2 text-sm text-slate-800 dark:text-slate-300'>
                   {exp.bullets.map((b, i) => (
                     <li key={i} className='flex gap-2'>
                       <i className='bx bx-check text-base text-slate-500 dark:text-slate-400 mt-0.5 shrink-0'></i>
@@ -85,7 +85,7 @@ const Experience = () => {
                 </ul>
 
                 {exp.project && (
-                  <p className='mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 text-sm text-gray-700 dark:text-slate-400'>
+                  <p className='mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 text-sm text-slate-800 dark:text-slate-400'>
                     <span className='font-semibold text-slate-700 dark:text-slate-200'>Key Project: </span>
                     {exp.project}
                   </p>

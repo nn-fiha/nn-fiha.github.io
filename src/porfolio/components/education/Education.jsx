@@ -6,6 +6,7 @@ const educationItems = [
     degree: 'Master of Science (Eng.) in Computer Science and Engineering',
     institution: 'Jahangirnagar University, Savar, Dhaka.',
     grade: { label: 'CGPA', value: '3.83/4.00' },
+    rank: '5th out of 56 students',
     thesis: 'Multilingual Sentiment Analysis of Social Media Reactions to OpenAI’s Ghibli-Style Image Generation Feature.',
   },
   {
@@ -13,6 +14,7 @@ const educationItems = [
     degree: 'Bachelor of Science (Eng.) in Computer Science and Engineering',
     institution: 'Jahangirnagar University, Savar, Dhaka.',
     grade: { label: 'CGPA', value: '3.69/4.00' },
+    rank: '9th out of 70 students',
     thesis: 'Deep Learning Based Bangladeshi Currency Coin Recognition.',
   },
 ]
@@ -36,12 +38,18 @@ const Education = () => {
                       <i className='bx bxs-graduation text-xl text-slate-600 dark:text-slate-300 mt-1 shrink-0'></i>
                       <h3 className='font-semibold text-base md:text-lg leading-snug dark:text-white'>{item.degree}</h3>
                     </div>
-                    <p className='text-gray-700 dark:text-slate-300 text-sm mt-1 md:ml-7'>{item.institution}</p>
-                    <p className='text-sm text-gray-700 dark:text-slate-300 mt-2 md:ml-7'>
+                    <p className='text-slate-800 dark:text-slate-300 text-sm mt-1 md:ml-7'>{item.institution}</p>
+                    <p className='text-sm text-slate-800 dark:text-slate-300 mt-2 md:ml-7'>
                       <span className='font-semibold'>{item.grade.label}:</span> {item.grade.value}
+                      {item.rank && (
+                        <>
+                          <span className='mx-2 text-slate-300 dark:text-slate-600'>|</span>
+                          <span className='font-semibold'>Position:</span> {item.rank}
+                        </>
+                      )}
                     </p>
                     {item.thesis && (
-                      <p className='text-sm text-gray-700 dark:text-slate-400 mt-2 md:ml-7 text-justify'>
+                      <p className='text-sm text-slate-800 dark:text-slate-400 mt-2 md:ml-7 text-justify'>
                         <span className='font-semibold'>Thesis: </span>{item.thesis}
                       </p>
                     )}

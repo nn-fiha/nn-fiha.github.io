@@ -9,6 +9,7 @@ import Projects from "./projects/Projects";
 import Skills from "./skills/Skills";
 import Experience from "./experience/Experience";
 import Publications from "./publications/Publications";
+import Research from "./research/Research";
 
 function Portfolio() {
     return (
@@ -17,6 +18,7 @@ function Portfolio() {
        <Body/>
        <Experience/>
        <Education/>
+       <Research/>
        <Publications/>
        <Skills />
        <Projects/>

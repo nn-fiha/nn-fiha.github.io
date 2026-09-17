@@ -13,7 +13,7 @@ const Publications = () => {
 
       <div className='max-w-5xl mx-auto md:px-8'>
       <div className="border-l-4 border-s-slate-600 dark:border-s-slate-400 bg-white dark:bg-slate-900 shadow-md rounded-lg p-4 flex flex-col gap-2">
-        <p className="text-gray-800 dark:text-slate-300 font-normal text-left">
+        <p className="text-slate-800 dark:text-slate-300 font-normal text-left">
           <a href="https://ieeexplore.ieee.org/abstract/document/10914454" className="hover:underline text-blue-600 dark:text-blue-400 font-semibold">
             Deep Learning Based Bangladeshi Currency Coin Recognition.
           </a> Serajum Monira, <strong className='dark:text-white'>Nurun Nahar Fiha</strong>, Md. Golam Moazzam, Md. Musfique Anwar.

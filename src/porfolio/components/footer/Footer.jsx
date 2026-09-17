@@ -1,4 +1,5 @@
 import React from "react";
+import ScholarIcon from "../icons/ScholarIcon";
 
 const quickLinks = [
   { label: "Home", href: "#home" },
@@ -6,6 +7,7 @@ const quickLinks = [
   { label: "Education", href: "#education" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
+  { label: "Research", href: "#research" },
   { label: "Publications", href: "#publications" },
   { label: "Contact", href: "#contact" },
 ];
@@ -13,9 +15,9 @@ const quickLinks = [
 const socials = [
   { icon: "bx bxl-linkedin", href: "https://www.linkedin.com/in/nnfiha/", label: "LinkedIn" },
   { icon: "bx bxl-github", href: "https://github.com/nn-fiha", label: "GitHub" },
-  { icon: "bx bxl-facebook", href: "https://www.facebook.com/nnfiha", label: "Facebook" },
   { icon: "bx bxl-instagram", href: "https://www.instagram.com/nn_fiha/", label: "Instagram" },
   { icon: "bx bxl-twitter", href: "https://twitter.com/nn_fiha", label: "Twitter" },
+  { svg: true, href: "https://scholar.google.com/citations?hl=en&user=EGe-L9cAAAAJ", label: "Google Scholar" },
 ];
 
 const Footer = () => {
@@ -29,8 +31,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <h3 className="text-white text-xl font-bold">Nurun Nahar Fiha</h3>
             <p className="mt-3 text-sm leading-relaxed text-slate-400 max-w-md">
-              SQA Engineer & CSE graduate from Jahangirnagar University. Passionate about
-              quality software, machine learning, and building products that work.
+              SQA Engineer & CSE graduate from Jahangirnagar University.
             </p>
             <p className="mt-4 text-xs text-slate-500 inline-flex items-center gap-1.5">
               <i className="bx bx-map text-base"></i>
@@ -69,6 +70,13 @@ const Footer = () => {
               <i className="bx bx-envelope text-base shrink-0"></i>
               nnfiha2000@gmail.com
             </a>
+            <a
+              href="mailto:fiha.stu2018@juniv.edu"
+              className="mt-2 inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors break-all"
+            >
+              <i className="bx bx-envelope text-base shrink-0"></i>
+              fiha.stu2018@juniv.edu
+            </a>
 
             <div className="flex gap-3 mt-5">
               {socials.map((s) => (
@@ -80,7 +88,7 @@ const Footer = () => {
                   aria-label={s.label}
                   className="w-9 h-9 inline-flex items-center justify-center rounded-md bg-slate-800 text-slate-300 hover:bg-white hover:text-slate-900 transition-colors"
                 >
-                  <i className={`${s.icon} text-lg`}></i>
+                  {s.svg ? <ScholarIcon /> : <i className={`${s.icon} text-lg`}></i>}
                 </a>
               ))}
             </div>
