@@ -44,9 +44,9 @@ const Experience = () => {
         <div className='relative md:pl-10 md:before:content-[""] md:before:absolute md:before:left-2 md:before:top-2 md:before:bottom-2 md:before:w-0.5 md:before:bg-slate-200 md:dark:before:bg-slate-700'>
           {experiences.map((exp, idx) => (
             <div key={idx} className='relative mb-8 last:mb-0'>
-              <span className='hidden md:block absolute -left-[34px] top-6 w-3.5 h-3.5 rounded-full bg-slate-600 dark:bg-slate-400 ring-4 ring-white dark:ring-slate-950 shadow'></span>
+              <span className={`hidden md:block absolute -left-[36px] top-6 w-4 h-4 rounded-full ring-4 ring-white dark:ring-slate-950 shadow ${exp.current ? 'bg-blue-600 dark:bg-blue-400' : 'bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-600'}`}></span>
 
-              <div className='border-l-4 border-s-slate-600 dark:border-s-slate-400 bg-white dark:bg-slate-900 shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow text-left'>
+              <div className={`border-l-4 bg-white dark:bg-slate-900 shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow text-left ${exp.current ? 'border-s-blue-600 dark:border-s-blue-400' : 'border-s-slate-300 dark:border-s-slate-600'}`}>
                 <div className='flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4'>
                   <div className='flex items-start gap-4 flex-1 min-w-0'>
                     {exp.logo && (
@@ -64,15 +64,18 @@ const Experience = () => {
                       </p>
                     </div>
                   </div>
-                  <span className='inline-flex self-start items-center gap-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap'>
-                    <i className='bx bx-calendar'></i>
-                    {exp.period}
+                  <div className='flex flex-wrap items-center gap-2 self-start'>
                     {exp.current && (
-                      <span className='ml-1 inline-flex items-center gap-1 text-emerald-700 dark:text-emerald-400'>
-                        <span className='w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse'></span>
+                      <span className='inline-flex items-center gap-1.5 bg-blue-600 text-white dark:bg-blue-500 text-[11px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full whitespace-nowrap'>
+                        <span className='w-1.5 h-1.5 rounded-full bg-white animate-pulse'></span>
+                        Current
                       </span>
                     )}
-                  </span>
+                    <span className='inline-flex items-center gap-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap'>
+                      <i className='bx bx-calendar'></i>
+                      {exp.period}
+                    </span>
+                  </div>
                 </div>
 
                 <ul className='space-y-2 text-sm text-slate-800 dark:text-slate-300'>

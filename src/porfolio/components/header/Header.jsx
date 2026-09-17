@@ -78,12 +78,6 @@ function Header() {
               </li>
 
               <li className="p-2 list-none md:hidden">
-                <a href="#publications">
-                <i className="bx bxs-book-content font-semibold text-xl"> </i>
-                </a>
-              </li>
-
-              <li className="p-2 list-none md:hidden">
                 <a href="#skills">
 
                 <i className='bx bx-cog font-semibold text-xl'></i>
@@ -116,10 +110,6 @@ function Header() {
 
               <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">
                 <a href="#research">Research</a>
-              </li>
-
-              <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">
-                <a href="#publications">Publications</a>
               </li>
 
               <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">

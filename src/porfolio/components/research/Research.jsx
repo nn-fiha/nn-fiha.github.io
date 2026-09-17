@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const SUPERVISORS = {
   israt: 'https://juniv.edu/teachers/israt',
@@ -19,6 +19,11 @@ const researchItems = [
     tone: 'progress',
     context: 'M.Sc. thesis',
     supervisor: { name: 'Dr. Israt Jahan', href: SUPERVISORS.israt },
+    metrics: [
+      { value: '36.7K', label: 'multilingual corpus' },
+      { value: '91.27%', label: 'BERT-base accuracy' },
+      { value: '21', label: 'configs benchmarked' },
+    ],
     bullets: [
       'Studied how the public perceives AI-generated art, conducting one of the first large-scale sentiment analyses of a viral generative-AI feature, by building a 36.7K-record multilingual corpus of Twitter and YouTube reactions with translation, emoji-aware preprocessing, and VADER-based weak supervision.',
       'Benchmarked 21 transformer and hybrid Transformer–RNN configurations to identify the best accuracy-efficiency trade-off for monitoring fast-moving social discourse; BERT-base performed best (91.27%), with a lightweight DistilBERT–BiGRU hybrid matching it at a fraction of the compute.',
@@ -31,6 +36,21 @@ const researchItems = [
     href: 'https://ieeexplore.ieee.org/abstract/document/10914454',
     context: 'B.Sc. thesis',
     supervisor: { name: 'Md. Golam Moazzam', href: SUPERVISORS.moazzam },
+    authors: ['Serajum Monira', 'Nurun Nahar Fiha', 'Md. Golam Moazzam', 'Md. Musfique Anwar'],
+    venue: '4th International Conference on Robotics, Electrical and Signal Processing Techniques 2025 (4th ICREST\u201925)',
+    bibtex: `@INPROCEEDINGS{10914454,
+  author={Monira, Serajum and Fiha, Nurun Nahar and Moazzam, Md. Golam and Anwar, Md. Musfique},
+  booktitle={2025 4th International Conference on Robotics, Electrical and Signal Processing Techniques (ICREST)},
+  title={Deep Learning Based Bangladeshi Currency Coin Recognition},
+  year={2025},
+  pages={161-166},
+  doi={10.1109/ICREST63960.2025.10914454}
+}`,
+    metrics: [
+      { value: '2,800', label: 'image dataset' },
+      { value: '14', label: 'coin classes' },
+      { value: '91.18%', label: 'test accuracy' },
+    ],
     bullets: [
       'Addressed coin identification for visually impaired users, as Bangladeshi coins are nearly identical in size and texture, by building a 2,800-image, 14-class dataset captured under real-world lighting and rotation conditions.',
       'Trained a Faster R-CNN (ResNet-50 FPN) against a CNN baseline in PyTorch, reaching 91.18% test accuracy (vs. 84.04%).',
@@ -40,6 +60,11 @@ const researchItems = [
     title: 'A Comparative Analysis of Low-Resource Techniques for Named Entity Recognition in Bengali',
     badge: 'M.Sc. course research project (NLP)',
     tone: 'course',
+    metrics: [
+      { value: '25K', label: 'sentence dataset' },
+      { value: '0.758', label: 'best F1 (XLM-R)' },
+      { value: '4', label: 'models compared' },
+    ],
     bullets: [
       'Investigated the effectiveness of modeling approaches for Bengali, a widely spoken but low-resource language, by benchmarking CRF, BiLSTM-CRF, mBERT, and XLM-RoBERTa on a custom 25K-sentence dataset merged from three public corpora.',
       'Enhanced models with FastText embeddings, character-level CNNs, and linguistic features; XLM-RoBERTa achieved the best F1 (0.758).',
@@ -49,6 +74,10 @@ const researchItems = [
     title: 'Cyberbullying Detection in Bengali Social Media Comments',
     badge: 'B.Sc. course research project (ML)',
     tone: 'course',
+    metrics: [
+      { value: '16K', label: 'comments relabeled' },
+      { value: '0.761', label: '10-fold CV (XGBoost)' },
+    ],
     bullets: [
       'Relabeled a 16K-comment Bengali toxic-comment dataset into 3 classes and trained TF-IDF-based classifiers; XGBoost with class-imbalance weighting achieved the best 10-fold CV score (0.761).',
     ],
@@ -56,6 +85,8 @@ const researchItems = [
 ]
 
 const Research = () => {
+  const [openCitation, setOpenCitation] = useState(null)
+
   return (
     <section id='research' className='p-8 mb-10 md:mb-20'>
       <h2 className='text-2xl font-bold text-center dark:text-white'>Research Experience</h2>
@@ -97,6 +128,53 @@ const Research = () => {
                   )}
                 </div>
 
+                {item.authors && (
+                  <p className='mt-3 text-sm text-slate-800 dark:text-slate-300'>
+                    {item.authors.map((a, i) => (
+                      <React.Fragment key={a}>
+                        {a === 'Nurun Nahar Fiha' ? <strong className='dark:text-white'>{a}</strong> : a}
+                        {i < item.authors.length - 1 ? ', ' : '. '}
+                      </React.Fragment>
+                    ))}
+                    <i className='text-xs text-slate-600 dark:text-slate-400'>{item.venue}</i>
+                  </p>
+                )}
+
+                {(item.bibtex || item.href) && (
+                  <div className='flex flex-wrap gap-2 mt-3'>
+                    {item.bibtex && (
+                      <button
+                        onClick={() => setOpenCitation(idx)}
+                        type='button'
+                        className='inline-flex items-center gap-1.5 border border-green-700 text-green-700 dark:border-green-400 dark:text-green-400 px-3 py-1 text-xs rounded-md hover:bg-green-700 hover:text-white dark:hover:bg-green-500 dark:hover:text-white transition-colors'
+                      >
+                        <i className='bx bxs-quote-single-right'></i> Citation
+                      </button>
+                    )}
+                    {item.href && (
+                      <a
+                        href={item.href}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='inline-flex items-center gap-1.5 border border-blue-700 text-blue-700 dark:border-blue-400 dark:text-blue-400 px-3 py-1 text-xs rounded-md hover:bg-blue-700 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-colors'
+                      >
+                        <i className='bx bx-link'></i> Source
+                      </a>
+                    )}
+                  </div>
+                )}
+
+                {item.metrics && (
+                  <div className='grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4'>
+                    {item.metrics.map((m, i) => (
+                      <div key={i} className='rounded-lg bg-slate-50 dark:bg-slate-800/60 px-3 py-2.5 text-center'>
+                        <p className='text-base font-bold text-slate-900 dark:text-white leading-none'>{m.value}</p>
+                        <p className='mt-1 text-[11px] font-medium text-slate-500 dark:text-slate-400 leading-tight'>{m.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
                 <ul className='mt-4 space-y-2 text-sm text-slate-800 dark:text-slate-300'>
                   {item.bullets.map((b, i) => (
                     <li key={i} className='flex gap-2 text-justify'>
@@ -110,6 +188,24 @@ const Research = () => {
           ))}
         </div>
       </div>
+
+      {openCitation !== null && (
+        <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4' onClick={() => setOpenCitation(null)}>
+          <div className='bg-white dark:bg-slate-900 rounded-lg shadow-lg max-w-3xl w-full p-6 relative' onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setOpenCitation(null)}
+              className='absolute top-4 right-6 text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:hover:text-white text-xl'
+              aria-label='Close'
+            >
+              &times;
+            </button>
+            <h3 className='text-lg font-semibold mb-4 text-left dark:text-white'>Citation</h3>
+            <pre className='text-xs text-left leading-relaxed font-mono whitespace-pre-wrap bg-gray-50 dark:bg-slate-800 dark:text-slate-200 p-4 rounded border-t dark:border-slate-700'>
+              {researchItems[openCitation].bibtex}
+            </pre>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
