@@ -21,8 +21,8 @@ const researchItems = [
     supervisor: { name: 'Dr. Israt Jahan', href: SUPERVISORS.israt },
     metrics: [
       { value: '36.7K', label: 'multilingual corpus' },
-      { value: '91.27%', label: 'BERT-base accuracy' },
       { value: '21', label: 'configs benchmarked' },
+      { value: '91.27%', label: 'BERT-base accuracy' },
     ],
     bullets: [
       'Studied how the public perceives AI-generated art, conducting one of the first large-scale sentiment analyses of a viral generative-AI feature, by building a 36.7K-record multilingual corpus of Twitter and YouTube reactions with translation, emoji-aware preprocessing, and VADER-based weak supervision.',
@@ -58,12 +58,13 @@ const researchItems = [
   },
   {
     title: 'A Comparative Analysis of Low-Resource Techniques for Named Entity Recognition in Bengali',
+    readMore: 'https://drive.google.com/file/d/16XDP_1N5NKYfeQ_Lflv2XcFNpAlk4dVs/view?usp=sharing',
     badge: 'M.Sc. course research project (NLP)',
     tone: 'course',
     metrics: [
       { value: '25K', label: 'sentence dataset' },
-      { value: '0.758', label: 'best F1 (XLM-R)' },
       { value: '4', label: 'models compared' },
+      { value: '0.758', label: 'best F1 (XLM-R)' },
     ],
     bullets: [
       'Investigated the effectiveness of modeling approaches for Bengali, a widely spoken but low-resource language, by benchmarking CRF, BiLSTM-CRF, mBERT, and XLM-RoBERTa on a custom 25K-sentence dataset merged from three public corpora.',
@@ -71,15 +72,18 @@ const researchItems = [
     ],
   },
   {
-    title: 'Cyberbullying Detection in Bengali Social Media Comments',
+    title: 'Cyberbullying Detection on Social Media Platforms Using Machine Learning',
+    readMore: 'https://drive.google.com/file/d/1Y_zHNk9VciuekiREZfN-sJZPCv5JWCTD/view?usp=sharing',
     badge: 'B.Sc. course research project (ML)',
     tone: 'course',
     metrics: [
       { value: '16K', label: 'comments relabeled' },
+      { value: '4', label: 'classifiers compared' },
       { value: '0.761', label: '10-fold CV (XGBoost)' },
     ],
     bullets: [
-      'Relabeled a 16K-comment Bengali toxic-comment dataset into 3 classes and trained TF-IDF-based classifiers; XGBoost with class-imbalance weighting achieved the best 10-fold CV score (0.761).',
+      'Relabeled a 16K-comment Bengali toxic-comment dataset into 3 classes (Non-Bullying, Bullying, Crime) and built a preprocessing pipeline covering stopword removal, stemming, and TF-IDF features.',
+      'Compared four classifiers (LR, DT, RF, XGBoost). XGBoost with class-imbalance weighting performed best, with 75.4% test accuracy and a 0.761 10-fold CV score.',
     ],
   },
 ]
@@ -140,30 +144,6 @@ const Research = () => {
                   </p>
                 )}
 
-                {(item.bibtex || item.href) && (
-                  <div className='flex flex-wrap gap-2 mt-3'>
-                    {item.bibtex && (
-                      <button
-                        onClick={() => setOpenCitation(idx)}
-                        type='button'
-                        className='inline-flex items-center gap-1.5 border border-green-700 text-green-700 dark:border-green-400 dark:text-green-400 px-3 py-1 text-xs rounded-md hover:bg-green-700 hover:text-white dark:hover:bg-green-500 dark:hover:text-white transition-colors'
-                      >
-                        <i className='bx bxs-quote-single-right'></i> Citation
-                      </button>
-                    )}
-                    {item.href && (
-                      <a
-                        href={item.href}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='inline-flex items-center gap-1.5 border border-blue-700 text-blue-700 dark:border-blue-400 dark:text-blue-400 px-3 py-1 text-xs rounded-md hover:bg-blue-700 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-colors'
-                      >
-                        <i className='bx bx-link'></i> Source
-                      </a>
-                    )}
-                  </div>
-                )}
-
                 {item.metrics && (
                   <div className='grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4'>
                     {item.metrics.map((m, i) => (
@@ -183,6 +163,40 @@ const Research = () => {
                     </li>
                   ))}
                 </ul>
+
+                {(item.bibtex || item.href || item.readMore) && (
+                  <div className='flex flex-wrap justify-end gap-2 mt-5'>
+                    {item.bibtex && (
+                      <button
+                        onClick={() => setOpenCitation(idx)}
+                        type='button'
+                        className='inline-flex items-center gap-1.5 border border-green-700 text-green-700 dark:border-green-400 dark:text-green-400 px-3 py-1 text-xs rounded-md hover:bg-green-700 hover:text-white dark:hover:bg-green-500 dark:hover:text-white transition-colors'
+                      >
+                        <i className='bx bxs-quote-single-right'></i> Citation
+                      </button>
+                    )}
+                    {item.href && (
+                      <a
+                        href={item.href}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='inline-flex items-center gap-1.5 border border-blue-700 text-blue-700 dark:border-blue-400 dark:text-blue-400 px-3 py-1 text-xs rounded-md hover:bg-blue-700 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-colors'
+                      >
+                        <i className='bx bx-link'></i> Source
+                      </a>
+                    )}
+                    {item.readMore && (
+                      <a
+                        href={item.readMore}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='inline-flex items-center gap-1.5 border border-slate-400 text-slate-700 dark:border-slate-500 dark:text-slate-300 px-3 py-1 text-xs rounded-md hover:bg-slate-700 hover:text-white dark:hover:bg-slate-200 dark:hover:text-slate-900 transition-colors'
+                      >
+                        <i className='bx bx-file'></i> Read more
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           ))}

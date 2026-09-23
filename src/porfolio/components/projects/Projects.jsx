@@ -2,34 +2,52 @@ import React from 'react'
 
 const projects = [
   {
-    title: 'OBE Based Result Management System',
+    title: 'OBE-Based Result Management System',
     image: 'OBE.png',
+    stack: ['Python', 'Django', 'Bootstrap', 'SQLite'],
+    description:
+      'Built a role-based academic results platform where students view results, teachers analyze courses via auto-generated CO-PO attainment graphs, and administrators monitor performance department-wide.',
     github: 'https://github.com/whomping-willow/OBE',
   },
   {
-    title: 'Konta Niben?',
+    title: 'Konta Niben \u2013 an E-commerce System',
     image: 'kontaNiben.png',
+    stack: ['MERN', 'Tailwind CSS', 'Jest', 'GitHub Actions'],
+    description:
+      'Developed a full-stack e-commerce platform following Agile/SDLC practices across 2 sprints, with JSDoc documentation, Jest unit tests, and CI via GitHub Actions.',
     github: 'https://github.com/SQA-PROJECT-1/Konta-Niben',
+  },
+  {
+    title: 'JU CSE Routinery',
+    image: 'routinery.png',
+    stack: ['Java', 'Android SDK', 'SQLite'],
+    description:
+      'Built an Android app for organizing CSE department class routines for individual batches.',
+    github: 'https://github.com/nn-fiha/JU-CSE-ROUTINARY',
   },
   {
     title: 'Cyber Bullying Detection using Machine Learning',
     image: 'cyber.jpg',
+    stack: ['Python', 'NumPy', 'Pandas', 'scikit-learn', 'NLTK', 'Matplotlib', 'Seaborn', 'Jupyter'],
+    description:
+      'Classified Bengali social media posts into 3 classes (Non-Bullying, Bullying, Crime) by training machine learning models on an annotated dataset, with an NLTK preprocessing pipeline covering tokenization, stemming and stopword removal, and TF-IDF features.',
     github: 'https://github.com/SM2142/Cyber-Bullying-Detection-on-Scocial-Media-Plaform-Using-Machine-Learning',
   },
   {
     title: 'BoiPoka',
     image: 'boipoka.png',
+    stack: ['React', 'Tailwind CSS'],
+    description:
+      'Developed a front-end bookstore application for browsing and discovering books while learning React.',
     demo: 'https://boi-poka.vercel.app/',
   },
   {
     title: 'Cineflix',
     image: 'cineflix1.png',
+    stack: ['HTML5', 'Tailwind CSS', 'JavaScript'],
+    description:
+      'Cineflix is a frontend video rendering site, built while learning JavaScript and Tailwind CSS.',
     demo: 'https://cineflix-fiha.netlify.app/',
-  },
-  {
-    title: 'JU CSE Routinery',
-    image: 'routinery.png',
-    github: 'https://github.com/nn-fiha/JU-CSE-ROUTINARY',
   },
 ]
 
@@ -57,6 +75,25 @@ const Projects = () => {
               <h3 className='text-base font-semibold text-left text-slate-800 dark:text-white leading-snug'>
                 {p.title}
               </h3>
+
+              {p.stack && (
+                <div className='flex flex-wrap gap-1.5 mt-2.5'>
+                  {p.stack.map((t) => (
+                    <span
+                      key={t}
+                      className='text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              {p.description && (
+                <p className='mt-3 text-sm text-left text-slate-800 dark:text-slate-300 leading-relaxed'>
+                  {p.description}
+                </p>
+              )}
 
               <div className='flex gap-2 mt-auto pt-4'>
                 {p.github && (
