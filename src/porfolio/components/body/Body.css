@@ -1,6 +1,6 @@
 .img-container {
     display: flex;
-    background-image: url(/public/images/profile.jpg);
+    background-image: url(/public/images/profile.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
