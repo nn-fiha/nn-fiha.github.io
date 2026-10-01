@@ -25,8 +25,9 @@ const researchItems = [
       { value: '91.27%', label: 'BERT-base accuracy' },
     ],
     bullets: [
-      'Studied how the public perceives AI-generated art, conducting one of the first large-scale sentiment analyses of a viral generative-AI feature, by building a 36.7K-record multilingual corpus of Twitter and YouTube reactions with translation, emoji-aware preprocessing, and VADER-based weak supervision.',
-      'Benchmarked 21 transformer and hybrid Transformer–RNN configurations to identify the best accuracy-efficiency trade-off for monitoring fast-moving social discourse; BERT-base performed best (91.27%), with a lightweight DistilBERT–BiGRU hybrid matching it at a fraction of the compute.',
+      'Built a 36.7K-record multilingual corpus of Twitter and YouTube reactions to a viral generative-AI feature to study public sentiment toward AI-generated art, using machine translation of non-English posts, emoji-aware preprocessing, and VADER-based weak supervision.',
+      'Benchmarked 21 transformer and hybrid Transformer-RNN configurations on accuracy and calibration (ECE). BERT-base performed best (91.27% accuracy on VADER-derived labels), while a lighter 1-layer DistilBERT-BiGRU hybrid nearly matched it (91.12%) with the lowest calibration error of all models.',
+      'Found that accuracy varied by under 3 percentage points across models while calibration error varied more than fourfold, and that 16 of 18 hybrids were worse calibrated than their base transformer.',
     ],
   },
   {

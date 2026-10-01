@@ -10,11 +10,10 @@ const experiences = [
     current: true,
     logo: process.env.PUBLIC_URL + '/images/zelflogo-Cv6SuQ3l.png',
     bullets: [
-      'Conduct functional, regression, smoke, sanity, and user acceptance testing to ensure high-quality software delivery.',
-      'Investigate and analyze issues to identify the root cause of bugs, ensuring faster resolution and preventing recurrence.',
-      'Report, track, and manage bugs effectively using Jira, maintaining clear communication with the development team.',
-      'Develop and maintain detailed test cases to streamline testing processes and improve test coverage.',
-      'Work cross-functionally with developers and stakeholders to align on project goals and ensure seamless delivery of features.',
+      { label: 'NLP system auditing', text: 'Audit production NLP features, including translation, sentiment analysis, summarization, and AI-generated insights, by tracing errors through Google Cloud logs, database queries, and API testing.' },
+      { label: 'Root-cause analysis', text: 'Investigate failures to identify their underlying causes, supporting faster fixes and preventing recurrence.' },
+      { label: 'Testing and coverage', text: 'Run functional, regression, smoke, sanity, and user acceptance testing. Build and maintain automated test suites in Playwright and write detailed test cases to improve coverage.' },
+      { label: 'Collaboration', text: 'Track and manage defects in Jira and work with developers and stakeholders to keep releases aligned with project goals.' },
     ],
   },
   {
@@ -82,7 +81,15 @@ const Experience = () => {
                   {exp.bullets.map((b, i) => (
                     <li key={i} className='flex gap-2'>
                       <i className='bx bx-check text-base text-slate-500 dark:text-slate-400 mt-0.5 shrink-0'></i>
-                      <span>{b}</span>
+                      <span>
+                        {b.label ? (
+                          <>
+                            <strong className='font-semibold text-slate-900 dark:text-white'>{b.label}:</strong> {b.text}
+                          </>
+                        ) : (
+                          b
+                        )}
+                      </span>
                     </li>
                   ))}
                 </ul>
