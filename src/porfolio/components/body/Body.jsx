@@ -44,7 +44,7 @@ function Data({ name }) {
 
 function Social() {
     return (
-        <div className='flex flex-col gap-4 md:gap-8 mt-10 md:mt-[120px] ml-[8%] md:ml-[13%]'>
+        <div className='flex flex-col gap-4 md:gap-8 mt-10 md:mt-0 ml-[8%] md:ml-[13%]'>
             <a href="https://twitter.com/nn_fiha" className='icon'><i className="uil uil-twitter"></i></a>
             <a href="https://www.linkedin.com/in/nnfiha/" className='icon'><i className="uil uil-linkedin-alt"></i></a>
             <a href="https://github.com/nn-fiha" className='icon'><i className="uil uil-github-alt"></i></a>
@@ -56,11 +56,11 @@ function Social() {
 function Body() {
     return (
         <div id='home' className='mb-10 md:mb-20'>
-            <div className='flex text-left mt-28 md:mt-40 gap-8 md:gap-6 p-8'>
+            <div className='flex text-left md:items-center mt-28 md:mt-40 gap-8 md:gap-6 p-8'>
                 <Social />
-                <div className='flex flex-col-reverse md:p-8 md:flex-row text-left gap-10'>
+                <div className='flex flex-col-reverse md:p-8 md:flex-row md:items-center text-left gap-10'>
                     <Data name="Nurun Nahar Fiha" />
-                    <div className='img-container md:mt-10'></div>
+                    <div className='img-container'></div>
                 </div>
             </div>
         </div>
