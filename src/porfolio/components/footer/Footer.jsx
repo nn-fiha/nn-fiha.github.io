@@ -62,22 +62,24 @@ const Footer = () => {
             <h4 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">
               Get in Touch
             </h4>
-            <a
-              href="mailto:nnfiha2000@gmail.com"
-              className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors break-all"
-            >
-              <i className="bx bx-envelope text-base shrink-0"></i>
-              nnfiha2000@gmail.com
-            </a>
-            <a
-              href="mailto:fiha.stu2018@juniv.edu"
-              className="mt-2 inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors break-all"
-            >
-              <i className="bx bx-envelope text-base shrink-0"></i>
-              fiha.stu2018@juniv.edu
-            </a>
+            <div className="flex flex-col items-center gap-2">
+              <a
+                href="mailto:nnfiha2000@gmail.com"
+                className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors break-all"
+              >
+                <i className="bx bx-envelope text-base shrink-0"></i>
+                nnfiha2000@gmail.com
+              </a>
+              <a
+                href="mailto:fiha.stu2018@juniv.edu"
+                className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors break-all"
+              >
+                <i className="bx bx-envelope text-base shrink-0"></i>
+                fiha.stu2018@juniv.edu
+              </a>
+            </div>
 
-            <div className="flex gap-3 mt-5">
+            <div className="flex justify-center gap-3 mt-5">
               {socials.map((s) => (
                 <a
                   key={s.label}
