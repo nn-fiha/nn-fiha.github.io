@@ -22,9 +22,9 @@ function Header() {
     <nav className="w-full bg-slate-50 dark:bg-slate-900 dark:border-b dark:border-slate-800 fixed z-50 left-0 right-0 top-0 transition-colors">
       <section className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
-          <div className="w-20 ml-0 md:w-32 md:ml-16 dark:invert">
-            <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="" />
-          </div>
+          <a href="#home" aria-label="Home" className="block w-20 ml-0 md:w-32 md:ml-16 dark:invert">
+            <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="Nurun Nahar Fiha" />
+          </a>
 
           <div className="md:hidden flex items-center gap-1">
             <ThemeButton />
