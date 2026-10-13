@@ -1,14 +1,15 @@
 import React from "react";
 import ScholarIcon from "../icons/ScholarIcon";
 
+// Keep this in the same order as the sections on the page.
 const quickLinks = [
   { label: "Home", href: "#home" },
   { label: "Experience", href: "#experience" },
   { label: "Education", href: "#education" },
+  { label: "Publications", href: "#publications" },
+  { label: "Research", href: "#research" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "Research", href: "#research" },
-  { label: "Publications", href: "#publications" },
   { label: "Contact", href: "#contact" },
 ];
 

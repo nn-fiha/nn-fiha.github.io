@@ -10,8 +10,8 @@ const navLinks = [
   { href: '#home', label: 'Home', icon: 'bx bx-home-alt' },
   { href: '#experience', label: 'Experience', icon: 'bx bx-briefcase' },
   { href: '#education', label: 'Education', Svg: GraduationCapIcon },
-  { href: '#research', label: 'Research', icon: 'bx bx-file-find' },
   { href: '#publications', label: 'Publications', icon: 'bx bx-book-content' },
+  { href: '#research', label: 'Research', icon: 'bx bx-file-find' },
   { href: '#skills', label: 'Skills', Svg: BrainCircuitIcon },
   { href: '#projects', label: 'Projects', icon: 'bx bx-code-alt' },
   { href: '#contact', label: 'Contact', icon: 'bx bx-envelope' },
@@ -114,11 +114,11 @@ function Header() {
               </li>
 
               <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">
-                <a href="#research">Research</a>
+                <a href="#publications">Publications</a>
               </li>
 
               <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">
-                <a href="#publications">Publications</a>
+                <a href="#research">Research</a>
               </li>
 
               <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">

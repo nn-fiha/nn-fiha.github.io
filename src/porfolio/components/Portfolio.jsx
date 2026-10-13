@@ -18,8 +18,8 @@ function Portfolio() {
        <Body/>
        <Experience/>
        <Education/>
-       <Research/>
        <Publications/>
+       <Research/>
        <Skills />
        <Projects/>
        <Contact />
