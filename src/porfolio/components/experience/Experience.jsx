@@ -6,6 +6,7 @@ const experiences = [
     company: 'Zelf AI',
     companyUrl: 'https://www.hellozelf.com/',
     location: 'Brooklyn, New York, USA',
+    remote: true,
     period: 'Dec 2024 – Present',
     current: true,
     logo: process.env.PUBLIC_URL + '/images/zelflogo-Cv6SuQ3l.png',
@@ -60,6 +61,12 @@ const Experience = () => {
                           {exp.company}
                         </a>
                         <span className='text-gray-600 dark:text-slate-400'> · {exp.location}</span>
+                        {exp.remote && (
+                          <span className='ml-2 inline-flex items-center gap-1 align-middle text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'>
+                            <i className='bx bx-wifi text-xs'></i>
+                            Remote
+                          </span>
+                        )}
                       </p>
                     </div>
                   </div>
