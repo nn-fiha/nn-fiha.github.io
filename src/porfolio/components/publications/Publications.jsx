@@ -20,9 +20,37 @@ const Publications = () => {
           <i className='text-sm'> 4th International Conference on Robotics, Electrical and Signal Processing Techniques 2025 (4th ICREST’25)</i>
         </p>
 
-        <div className="flex justify-between gap-2 mt-2">
-          <div>
+        <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 mt-3 text-sm text-left">
+          <dt className="text-slate-500 dark:text-slate-400">Type</dt>
+          <dd className="text-slate-800 dark:text-slate-300">Conference paper (double-blind peer-reviewed)</dd>
+
+          <dt className="text-slate-500 dark:text-slate-400">Published in</dt>
+          <dd className="text-slate-800 dark:text-slate-300">IEEE Xplore</dd>
+
+          <dt className="text-slate-500 dark:text-slate-400">Year</dt>
+          <dd className="text-slate-800 dark:text-slate-300">2025</dd>
+
+          <dt className="text-slate-500 dark:text-slate-400">Pages</dt>
+          <dd className="text-slate-800 dark:text-slate-300">161&ndash;166</dd>
+
+          <dt className="text-slate-500 dark:text-slate-400">DOI</dt>
+          <dd>
+            <a
+              href="https://doi.org/10.1109/ICREST63960.2025.10914454"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 dark:text-blue-400 hover:underline break-all"
+            >
+              10.1109/ICREST63960.2025.10914454
+            </a>
+          </dd>
+        </dl>
+
+        <div className="flex flex-wrap justify-between items-center gap-2 mt-3">
+          <div className="flex flex-wrap gap-2">
             <span className="bg-blue-500 text-white font-bold text-xs px-2 py-1 rounded-md">Published</span>
+            <span className="bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 font-semibold text-xs px-2 py-1 rounded-md">Conference paper</span>
+            <span className="bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 font-semibold text-xs px-2 py-1 rounded-md">IEEE Xplore</span>
           </div>
           <div>
             {/* Open Modal Button */}

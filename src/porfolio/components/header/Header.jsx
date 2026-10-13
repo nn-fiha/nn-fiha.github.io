@@ -2,6 +2,59 @@ import React from 'react';
 import "./Header.css";
 import { useState } from "react";
 import useTheme from "../../hooks/useTheme";
+import BrainCircuitIcon from "../icons/BrainCircuitIcon";
+import GraduationCapIcon from "../icons/GraduationCapIcon";
+
+// Single source of truth for the nav; rendered as a slide-in drawer on mobile.
+const navLinks = [
+  { href: '#home', label: 'Home', icon: 'bx bx-home-alt' },
+  { href: '#experience', label: 'Experience', icon: 'bx bx-briefcase' },
+  { href: '#education', label: 'Education', Svg: GraduationCapIcon },
+  { href: '#research', label: 'Research', icon: 'bx bx-file-find' },
+  { href: '#publications', label: 'Publications', icon: 'bx bx-book-content' },
+  { href: '#skills', label: 'Skills', Svg: BrainCircuitIcon },
+  { href: '#projects', label: 'Projects', icon: 'bx bx-code-alt' },
+  { href: '#contact', label: 'Contact', icon: 'bx bx-envelope' },
+];
+
+const Glyph = ({ link }) =>
+  link.Svg ? <link.Svg className='w-5 h-5 shrink-0' /> : <i className={`${link.icon} text-xl shrink-0`}></i>;
+
+function MobileDrawer({ open, onClose }) {
+  return (
+    <div className='md:hidden' aria-hidden={!open}>
+      {/* backdrop */}
+      <div
+        onClick={onClose}
+        className={`fixed inset-0 z-40 bg-slate-900/50 transition-opacity duration-300 ${
+          open ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      />
+
+      {/* panel: sits just under the bar, sized to its content */}
+      <aside
+        className={`absolute top-full right-0 z-50 w-60 max-w-[75vw] origin-top-right rounded-bl-2xl bg-slate-50 dark:bg-slate-900 border-l border-b border-slate-200 dark:border-slate-800 shadow-2xl transition-all duration-300 ease-out ${
+          open ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'
+        }`}
+      >
+        <ul className='flex flex-col p-2'>
+          {navLinks.map((l) => (
+            <li key={l.href} className='list-none'>
+              <a
+                href={l.href}
+                onClick={onClose}
+                className='flex items-center min-h-[44px] gap-3 px-3 py-2 rounded-lg text-slate-800 dark:text-slate-200 hover:bg-slate-200/70 dark:hover:bg-slate-800 transition-colors'
+              >
+                <Glyph link={l} />
+                <span className='text-sm font-medium'>{l.label}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </aside>
+    </div>
+  );
+}
 
 function Header() {
   const [navbar, setNavbar] = useState(false);
@@ -22,7 +75,7 @@ function Header() {
     <nav className="w-full bg-slate-50 dark:bg-slate-900 dark:border-b dark:border-slate-800 fixed z-50 left-0 right-0 top-0 transition-colors">
       <section className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
-          <a href="#home" aria-label="Home" className="block w-20 ml-0 md:w-32 md:ml-16 dark:invert">
+          <a href="#home" aria-label="Home" className="block w-20 ml-0 md:w-32 md:ml-2 dark:invert">
             <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="Nurun Nahar Fiha" />
           </a>
 
@@ -47,55 +100,7 @@ function Header() {
               navbar ? "block" : "hidden"
             }`}
           >
-            <ul
-              className={`items-center justify-center md:flex md:space-x-6 md:space-y-0 font-medium text-slate-800 dark:text-slate-200 ${
-                navbar ? "grid grid-cols-3 gap-x-14" : "flex flex-row"
-              }`}
-            >
-              <li className=" p-2 list-none md:hidden">
-                <a href="#home">
-                  <i className="bx bx-home-alt font-semibold text-xl"></i>
-                </a>
-              </li>
-
-
-              <li className="p-2 list-none md:hidden">
-                <a href="#experience">
-                  <i className="bx bxs-briefcase font-semibold text-xl"></i>
-
-                </a>
-              </li>
-              <li className="p-2 list-none md:hidden">
-                <a href="#education">
-                <i className="bx bxs-graduation font-semibold text-xl"> </i>
-                </a>
-              </li>
-
-              <li className="p-2 list-none md:hidden">
-                <a href="#research">
-                <i className="bx bxs-flask font-semibold text-xl"> </i>
-                </a>
-              </li>
-
-              <li className="p-2 list-none md:hidden">
-                <a href="#skills">
-
-                <i className='bx bx-cog font-semibold text-xl'></i>
-                </a>
-              </li>
-              <li className="p-2 list-none md:hidden">
-                <a href="#projects">
-
-                  <i className='bx bx-code-alt font-semibold text-xl'></i>
-
-                </a>
-              </li>
-              <li className="p-2 list-none md:hidden">
-                <a href="#contact">
-                 <i className='bx bxs-paper-plane font-semibold text-xl'></i>
-                </a>
-              </li>
-
+            <ul className="items-center justify-center md:flex md:space-x-2 md:space-y-0 font-medium text-slate-800 dark:text-slate-200">
               <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">
                 <a href="#home">Home</a>
               </li>
@@ -110,6 +115,10 @@ function Header() {
 
               <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">
                 <a href="#research">Research</a>
+              </li>
+
+              <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">
+                <a href="#publications">Publications</a>
               </li>
 
               <li className="p-2 list-none hidden md:block hover:text-slate-900 dark:hover:text-white">
@@ -128,6 +137,7 @@ function Header() {
           </div>
         </div>
       </section>
+      <MobileDrawer open={navbar} onClose={() => setNavbar(false)} />
     </nav>
   );
 }

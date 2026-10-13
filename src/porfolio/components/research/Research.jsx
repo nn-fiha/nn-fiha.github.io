@@ -37,8 +37,6 @@ const researchItems = [
     href: 'https://ieeexplore.ieee.org/abstract/document/10914454',
     context: 'B.Sc. thesis',
     supervisor: { name: 'Md. Golam Moazzam', href: SUPERVISORS.moazzam },
-    authors: ['Serajum Monira', 'Nurun Nahar Fiha', 'Md. Golam Moazzam', 'Md. Musfique Anwar'],
-    venue: '4th International Conference on Robotics, Electrical and Signal Processing Techniques 2025 (4th ICREST\u201925)',
     bibtex: `@INPROCEEDINGS{10914454,
   author={Monira, Serajum and Fiha, Nurun Nahar and Moazzam, Md. Golam and Anwar, Md. Musfique},
   booktitle={2025 4th International Conference on Robotics, Electrical and Signal Processing Techniques (ICREST)},

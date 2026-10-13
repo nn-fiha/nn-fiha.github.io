@@ -9,6 +9,7 @@ import Projects from "./projects/Projects";
 import Skills from "./skills/Skills";
 import Experience from "./experience/Experience";
 import Research from "./research/Research";
+import Publications from "./publications/Publications";
 
 function Portfolio() {
     return (
@@ -18,6 +19,7 @@ function Portfolio() {
        <Experience/>
        <Education/>
        <Research/>
+       <Publications/>
        <Skills />
        <Projects/>
        <Contact />
