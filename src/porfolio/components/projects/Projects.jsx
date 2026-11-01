@@ -2,30 +2,6 @@ import React from 'react'
 
 const projects = [
   {
-    title: 'OBE-Based Result Management System',
-    image: 'OBE.png',
-    stack: ['Python', 'Django', 'Bootstrap', 'SQLite'],
-    description:
-      'Built a role-based academic results platform where students view results, teachers analyze courses via auto-generated CO-PO attainment graphs, and administrators monitor performance department-wide.',
-    github: 'https://github.com/whomping-willow/OBE',
-  },
-  {
-    title: 'Konta Niben \u2013 an E-commerce System',
-    image: 'kontaNiben.png',
-    stack: ['MERN', 'Tailwind CSS', 'Jest', 'GitHub Actions'],
-    description:
-      'Developed a full-stack e-commerce platform following Agile/SDLC practices across 2 sprints, with JSDoc documentation, Jest unit tests, and CI via GitHub Actions.',
-    github: 'https://github.com/SQA-PROJECT-1/Konta-Niben',
-  },
-  {
-    title: 'JU CSE Routinery',
-    image: 'routinery.png',
-    stack: ['Java', 'Android SDK', 'SQLite'],
-    description:
-      'Built an Android app for organizing CSE department class routines for individual batches.',
-    github: 'https://github.com/nn-fiha/JU-CSE-ROUTINARY',
-  },
-  {
     title: 'Cyber Bullying Detection using Machine Learning',
     image: 'cyber.jpg',
     stack: ['Python', 'NumPy', 'Pandas', 'scikit-learn', 'NLTK', 'Matplotlib', 'Seaborn', 'Jupyter'],
@@ -34,21 +10,55 @@ const projects = [
     github: 'https://github.com/SM2142/Cyber-Bullying-Detection-on-Scocial-Media-Plaform-Using-Machine-Learning',
   },
   {
-    title: 'BoiPoka',
-    image: 'boipoka.png',
-    stack: ['React', 'Tailwind CSS'],
+    title: 'Konta Niben \u2013 an E-commerce System',
+    image: 'kontaNiben.png',
+    stack: ['MERN', 'Tailwind CSS', 'Jest', 'GitHub Actions'],
     description:
-      'Developed a front-end bookstore application for browsing and discovering books while learning React.',
-    demo: 'https://boi-poka.vercel.app/',
+      'Konta Niben is a user-friendly platform for selling products directly to customers. Developed as a full-stack e-commerce application following Agile/SDLC practices across 2 sprints, with JSDoc documentation, Jest unit tests, and CI via GitHub Actions.',
+    github: 'https://github.com/SQA-PROJECT-1/Konta-Niben',
   },
   {
-    title: 'Cineflix',
-    image: 'cineflix1.png',
-    stack: ['HTML5', 'Tailwind CSS', 'JavaScript'],
+    title: 'OBE-Based Result Management System',
+    image: 'OBE.png',
+    stack: ['Python', 'Django', 'Bootstrap', 'SQLite'],
     description:
-      'Cineflix is a frontend video rendering site, built while learning JavaScript and Tailwind CSS.',
-    demo: 'https://cineflix-fiha.netlify.app/',
+      'OBE introduces an Outcome-Based Education (OBE) result management system for streamlined and effective academic assessment and reporting. It not only rectifies the deficiencies of conventional systems but also incorporates additional features for enhanced functionality.',
+    github: 'https://github.com/whomping-willow/OBE',
   },
+  {
+    title: 'IoT Based Plant Watering System',
+    image: 'iot-circuit.png',
+    stack: ['Arduino C++', 'NodeMCU ESP8266', 'Blynk', 'DHT11'],
+    description:
+      'Connected a soil moisture sensor and water pump to a NodeMCU ESP8266 that streams readings to the Blynk cloud, so soil moisture, temperature and humidity can be checked from a phone, with alerts when soil goes too dry or too wet and remote control of the pump.',
+    github: 'https://github.com/nn-fiha/iot-plant-watering-system',
+  },
+  {
+    title: 'JU CSE Routinery',
+    image: 'routinery.png',
+    stack: ['Java', 'Android SDK', 'SQLite'],
+    description:
+      'Class routines in the department were shared as static files, which made it hard for students to find their schedule for the day or notice changes. JU CSE Routinery puts the routine in one app: students can check their daily and full routines by batch, and admins can add or update classes directly.',
+    github: 'https://github.com/nn-fiha/JU-CSE-ROUTINARY',
+  },
+  {
+    title: 'BoiPoka',
+    image: 'boipoka-library.jpg',
+    stack: ['React 18', 'Vite', 'Tailwind CSS', 'Supabase', 'PostgreSQL'],
+    description:
+      'BoiPoka is a bookshelf for every book you have read. Readers sign up, put books on their wooden shelf, and keep a journal for each one: status, rating, how it felt, their thoughts and the lines they loved. Shelves are public by default, so readers can browse each other\'s shelves and see what others felt about a book.',
+    github: 'https://github.com/nn-fiha/BoiPoka',
+    demo: 'https://boi-poka.vercel.app/',
+  },
+  // Hidden for now
+  // {
+  //   title: 'Cineflix',
+  //   image: 'cineflix1.png',
+  //   stack: ['HTML5', 'Tailwind CSS', 'JavaScript'],
+  //   description:
+  //     'Cineflix is a frontend video rendering site, built while learning JavaScript and Tailwind CSS.',
+  //   demo: 'https://cineflix-fiha.netlify.app/',
+  // },
 ]
 
 const Projects = () => {
@@ -90,7 +100,7 @@ const Projects = () => {
               )}
 
               {p.description && (
-                <p className='mt-3 text-sm text-left text-slate-800 dark:text-slate-300 leading-relaxed'>
+                <p className='mt-3 text-sm text-justify text-slate-800 dark:text-slate-300 leading-relaxed'>
                   {p.description}
                 </p>
               )}
