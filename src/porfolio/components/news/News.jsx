@@ -10,10 +10,6 @@ const news = [
     text: 'Completed my MSc in Computer Science and Engineering at Jahangirnagar University, ranked 7th of 44.',
   },
   {
-    date: 'Oct 2025',
-    text: '2nd Runner-up at Zelf Hackathon 2.0.',
-  },
-  {
     date: 'Jan 2025',
     text: 'Presented Deep Learning Based Bangladeshi Currency Coin Recognition at ICREST 2025, published in IEEE Xplore.',
     link: { label: 'DOI', href: 'https://doi.org/10.1109/ICREST63960.2025.10914454' },
@@ -21,6 +17,10 @@ const news = [
   {
     date: 'Dec 2024',
     text: 'Joined Zelf AI as a Software Quality Assurance Engineer.',
+  },
+  {
+    date: 'Oct 2024',
+    text: '2nd Runner-up at Zelf Hackathon 2.0.',
   },
   {
     date: 'Jul 2024',
