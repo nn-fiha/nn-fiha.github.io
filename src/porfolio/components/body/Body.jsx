@@ -6,32 +6,56 @@ import ScholarIcon from '../icons/ScholarIcon'
 
 const linkClass = 'text-blue-600 dark:text-blue-400 hover:underline font-medium';
 
+const interests = [
+    'Natural Language Processing',
+    'Reliability and evaluation of LLMs',
+    'Low-resource and multilingual NLP',
+    'Human-AI interaction',
+    'Machine Learning',
+];
+
 function Data({ name }) {
     return (
         <div className='-ml-24 md:ml-[1%]'>
             <h1 className='text-left mb-2 text-3xl font-bold dark:text-white'>{name}</h1>
-            <div className='flex flex-wrap items-center gap-3 mb-6 text-slate-600 dark:text-slate-400'>
-                <span className='inline-block w-10 h-px bg-slate-400 dark:bg-slate-500'></span>
+            <div className='flex flex-wrap items-center gap-3 mb-6 text-slate-600 dark:text-zinc-400'>
+                <span className='inline-block w-10 h-px bg-slate-400 dark:bg-zinc-500'></span>
                 <span className='text-sm font-medium tracking-wide uppercase'>SQA Engineer</span>
-                <span className='hidden md:inline text-slate-300 dark:text-slate-600'>&middot;</span>
+                <span className='hidden md:inline text-slate-300 dark:text-zinc-600'>&middot;</span>
                 <span className='text-sm font-medium tracking-wide uppercase'>Prospective PhD Student</span>
             </div>
-            <p className='text-justify mb-8 max-w-[375px] md:max-w-[680px] text-sm text-slate-800 dark:text-slate-200'>
+            <p className='text-justify mb-8 max-w-[375px] md:max-w-[680px] text-sm text-slate-800 dark:text-zinc-200'>
                 I am a Software Quality Assurance Engineer at <a href='https://www.hellozelf.com/' target='_blank' rel='noopener noreferrer' className={linkClass}>Zelf AI</a>, where I contribute to enhancing software quality and ensuring the delivery of efficient and reliable systems. Being detail-oriented and a good communicator, I enjoy solving problems alongside developers, analysts, and stakeholders.
                 <br /><br />
                 I completed my MSc in Computer Science and Engineering at Jahangirnagar University, where my thesis, <i>Multilingual Sentiment Analysis of Social Media Reactions to OpenAI&rsquo;s Ghibli-Style Image Generation Feature</i>, studied how audiences across different languages responded to a widely discussed generative AI release. It was conducted under the supervision of <a href='https://juniv.edu/teachers/israt' target='_blank' rel='noopener noreferrer' className={linkClass}>Professor Dr. Israt Jahan</a>. Earlier, my undergraduate thesis, <i>Deep Learning Based Bangladeshi Currency Coin Recognition</i>, built to help visually impaired users identify currency, was published at ICREST&rsquo;25. It was conducted under the supervision of <a href='https://scholar.google.com/citations?user=vuqUDk0AAAAJ' target='_blank' rel='noopener noreferrer' className={linkClass}>Professor Md. Golam Moazzam</a>.
                 <br /><br />
-                <span className='block border-l-4 border-blue-500 dark:border-blue-400 pl-4 my-1 text-slate-800 dark:text-slate-200'>I am a <strong className='font-semibold'>prospective graduate student</strong> and my research interests include <strong className='font-semibold'>Natural Language Processing (NLP)</strong>, <strong className='font-semibold'>Machine Learning (ML)</strong>, <strong className='font-semibold'>Artificial Intelligence (AI)</strong>, and <strong className='font-semibold'>Human-Computer Interaction (HCI)</strong>. Within NLP, I am drawn to the reliability, truthfulness, and evaluation of large language models, low-resource and multilingual settings, and how people interact with and rely on these systems.</span>
+                <span className='block border-l-4 border-blue-500 dark:border-blue-400 pl-4 my-1 text-slate-800 dark:text-zinc-200'>I am a <strong className='font-semibold'>prospective graduate student</strong> and my research interests include <strong className='font-semibold'>Natural Language Processing (NLP)</strong>, <strong className='font-semibold'>Machine Learning (ML)</strong>, <strong className='font-semibold'>Artificial Intelligence (AI)</strong>, and <strong className='font-semibold'>Human-Computer Interaction (HCI)</strong>. Within NLP, I am drawn to the reliability, truthfulness, and evaluation of large language models, low-resource and multilingual settings, and how people interact with and rely on these systems.</span>
             </p>
 
+            <div className='mb-8 max-w-[375px] md:max-w-[680px]'>
+                <h3 className='text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400 mb-2.5'>
+                    Research interests
+                </h3>
+                <div className='flex flex-wrap gap-2'>
+                    {interests.map((t) => (
+                        <span
+                            key={t}
+                            className='text-[13px] font-medium px-3 py-1 rounded bg-slate-100 text-slate-700 dark:bg-ink-raised dark:text-zinc-300'
+                        >
+                            {t}
+                        </span>
+                    ))}
+                </div>
+            </div>
+
             <div className='flex flex-wrap gap-3'>
-                <a download="" href={CV}>
-                    <button className='inline-flex items-center gap-2 text-white bg-slate-700 border-none px-4 py-2 font-medium transition-all rounded-md hover:bg-slate-600'>
-                        Resume <i className="uil uil-file-download-alt text-xl"></i>
+                <a href={CV} target='_blank' rel='noopener noreferrer'>
+                    <button className='inline-flex items-center gap-2 text-white bg-slate-700 dark:bg-zinc-700 border-none px-4 py-2 font-medium transition-all rounded-md hover:bg-slate-600 dark:hover:bg-zinc-600'>
+                        Resume <i className='bx bx-link-external text-xl'></i>
                     </button>
                 </a>
                 <a href="#contact">
-                    <button className='inline-flex items-center gap-2 border-2 border-slate-700 dark:border-slate-300 text-slate-700 dark:text-slate-200 hover:bg-slate-700 hover:text-white dark:hover:bg-slate-200 dark:hover:text-slate-900 px-4 py-2 text-sm font-medium transition-all rounded-md'>
+                    <button className='inline-flex items-center gap-2 border-2 border-slate-700 dark:border-zinc-300 text-slate-700 dark:text-zinc-200 hover:bg-slate-700 hover:text-white dark:hover:bg-zinc-200 dark:hover:text-zinc-900 px-4 py-2 text-sm font-medium transition-all rounded-md'>
                         <i className='bx bxs-paper-plane text-base'></i>
                         Get in Touch
                     </button>

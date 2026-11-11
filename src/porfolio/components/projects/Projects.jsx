@@ -65,15 +65,15 @@ const Projects = () => {
   return (
     <section id='projects' className='p-8 mb-10 md:mb-20'>
       <h2 className='text-2xl font-bold text-center dark:text-white'>Projects</h2>
-      <span className='block text-xs text-gray-500 dark:text-slate-400 text-center mb-12'>My existing projects</span>
+      <span className='block text-xs text-gray-500 dark:text-zinc-400 text-center mb-12'>My existing projects</span>
 
       <div className='max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
         {projects.map((p) => (
           <div
             key={p.title}
-            className='group bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col'
+            className='group bg-white dark:bg-ink-card border border-slate-100 dark:border-ink-line rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col'
           >
-            <div className='relative overflow-hidden bg-slate-50 dark:bg-slate-800 h-44'>
+            <div className='relative overflow-hidden bg-slate-50 dark:bg-ink-raised h-44'>
               <img
                 src={process.env.PUBLIC_URL + '/images/' + p.image}
                 alt={p.title}
@@ -91,7 +91,7 @@ const Projects = () => {
                   {p.stack.map((t) => (
                     <span
                       key={t}
-                      className='text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'
+                      className='text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 dark:bg-ink-raised dark:text-zinc-300'
                     >
                       {t}
                     </span>
@@ -100,7 +100,7 @@ const Projects = () => {
               )}
 
               {p.description && (
-                <p className='mt-3 text-sm text-justify text-slate-800 dark:text-slate-300 leading-relaxed'>
+                <p className='mt-3 text-sm text-justify text-slate-800 dark:text-zinc-300 leading-relaxed'>
                   {p.description}
                 </p>
               )}
@@ -111,7 +111,7 @@ const Projects = () => {
                     href={p.github}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='inline-flex items-center gap-1.5 border border-slate-700 text-slate-700 dark:border-slate-300 dark:text-slate-300 px-3 py-1.5 text-xs font-medium rounded-md hover:bg-slate-700 hover:text-white dark:hover:bg-slate-200 dark:hover:text-slate-900 transition-colors'
+                    className='inline-flex items-center gap-1.5 border border-slate-700 text-slate-700 dark:border-zinc-300 dark:text-zinc-300 px-3 py-1.5 text-xs font-medium rounded-md hover:bg-slate-700 hover:text-white dark:hover:bg-zinc-200 dark:hover:text-zinc-900 transition-colors'
                   >
                     <i className='bx bxl-github text-base'></i> Code
                   </a>

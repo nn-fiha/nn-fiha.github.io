@@ -9,7 +9,7 @@ const SUPERVISORS = {
 const badgeTone = {
   published: 'bg-blue-50 text-blue-700 ring-blue-200 dark:bg-blue-500/10 dark:text-blue-300 dark:ring-blue-500/30',
   progress: 'bg-amber-50 text-amber-700 ring-amber-200 dark:bg-amber-500/10 dark:text-amber-300 dark:ring-amber-500/30',
-  course: 'bg-slate-100 text-slate-600 ring-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700',
+  course: 'bg-slate-100 text-slate-600 ring-slate-200 dark:bg-ink-raised dark:text-zinc-300 dark:ring-zinc-700',
 }
 
 const researchItems = [
@@ -93,15 +93,15 @@ const Research = () => {
   return (
     <section id='research' className='p-8 mb-10 md:mb-20'>
       <h2 className='text-2xl font-bold text-center dark:text-white'>Research Experience</h2>
-      <span className='block text-xs text-gray-500 dark:text-slate-400 text-center mb-12'>Theses &amp; Projects</span>
+      <span className='block text-xs text-gray-500 dark:text-zinc-400 text-center mb-12'>Theses &amp; Projects</span>
 
       <div className='max-w-5xl mx-auto md:px-8'>
-        <div className='relative md:pl-10 md:before:content-[""] md:before:absolute md:before:left-2 md:before:top-2 md:before:bottom-2 md:before:w-0.5 md:before:bg-slate-200 md:dark:before:bg-slate-700'>
+        <div className='relative md:pl-10 md:before:content-[""] md:before:absolute md:before:left-2 md:before:top-2 md:before:bottom-2 md:before:w-0.5 md:before:bg-slate-200 md:dark:before:bg-zinc-700'>
           {researchItems.map((item, idx) => (
             <div key={idx} className='relative mb-8 last:mb-0'>
-              <span className='hidden md:block absolute -left-[34px] top-6 w-3.5 h-3.5 rounded-full bg-slate-600 dark:bg-slate-400 ring-4 ring-white dark:ring-slate-950 shadow'></span>
+              <span className='hidden md:block absolute -left-[34px] top-6 w-3.5 h-3.5 rounded-full bg-slate-600 dark:bg-zinc-400 ring-4 ring-white dark:ring-ink-page shadow'></span>
 
-              <div className='border-l-4 border-s-slate-600 dark:border-s-slate-400 bg-white dark:bg-slate-900 shadow-md rounded-lg p-5 hover:shadow-lg transition-shadow text-left'>
+              <div className='border-l-4 border-s-slate-600 dark:border-s-zinc-400 bg-white dark:bg-ink-card shadow-md rounded-lg p-5 hover:shadow-lg transition-shadow text-left'>
                 <h3 className='font-semibold text-base md:text-lg leading-snug dark:text-white'>
                   {item.href ? (
                     <a href={item.href} target='_blank' rel='noopener noreferrer' className='text-blue-600 dark:text-blue-400 hover:underline'>
@@ -117,7 +117,7 @@ const Research = () => {
                     {item.badge}
                   </span>
                   {item.context && (
-                    <span className='text-sm text-slate-800 dark:text-slate-300'>
+                    <span className='text-sm text-slate-800 dark:text-zinc-300'>
                       {item.context}
                       {item.supervisor && (
                         <>
@@ -132,32 +132,32 @@ const Research = () => {
                 </div>
 
                 {item.authors && (
-                  <p className='mt-3 text-sm text-slate-800 dark:text-slate-300'>
+                  <p className='mt-3 text-sm text-slate-800 dark:text-zinc-300'>
                     {item.authors.map((a, i) => (
                       <React.Fragment key={a}>
                         {a === 'Nurun Nahar Fiha' ? <strong className='dark:text-white'>{a}</strong> : a}
                         {i < item.authors.length - 1 ? ', ' : '. '}
                       </React.Fragment>
                     ))}
-                    <i className='text-xs text-slate-600 dark:text-slate-400'>{item.venue}</i>
+                    <i className='text-xs text-slate-600 dark:text-zinc-400'>{item.venue}</i>
                   </p>
                 )}
 
                 {item.metrics && (
                   <div className='grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4'>
                     {item.metrics.map((m, i) => (
-                      <div key={i} className='rounded-lg bg-slate-50 dark:bg-slate-800/60 px-3 py-2.5 text-center'>
+                      <div key={i} className='rounded-lg bg-slate-50 dark:bg-ink-raised/60 px-3 py-2.5 text-center'>
                         <p className='text-base font-bold text-slate-900 dark:text-white leading-none'>{m.value}</p>
-                        <p className='mt-1 text-[11px] font-medium text-slate-500 dark:text-slate-400 leading-tight'>{m.label}</p>
+                        <p className='mt-1 text-[11px] font-medium text-slate-500 dark:text-zinc-400 leading-tight'>{m.label}</p>
                       </div>
                     ))}
                   </div>
                 )}
 
-                <ul className='mt-4 space-y-2 text-sm text-slate-800 dark:text-slate-300'>
+                <ul className='mt-4 space-y-2 text-sm text-slate-800 dark:text-zinc-300'>
                   {item.bullets.map((b, i) => (
                     <li key={i} className='flex gap-2 text-justify'>
-                      <i className='bx bx-chevron-right text-base shrink-0 mt-0.5 text-slate-500 dark:text-slate-400'></i>
+                      <i className='bx bx-chevron-right text-base shrink-0 mt-0.5 text-slate-500 dark:text-zinc-400'></i>
                       <span>{b}</span>
                     </li>
                   ))}
@@ -189,7 +189,7 @@ const Research = () => {
                         href={item.readMore}
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='inline-flex items-center gap-1.5 border border-slate-400 text-slate-700 dark:border-slate-500 dark:text-slate-300 px-3 py-1 text-xs rounded-md hover:bg-slate-700 hover:text-white dark:hover:bg-slate-200 dark:hover:text-slate-900 transition-colors'
+                        className='inline-flex items-center gap-1.5 border border-slate-400 text-slate-700 dark:border-zinc-500 dark:text-zinc-300 px-3 py-1 text-xs rounded-md hover:bg-slate-700 hover:text-white dark:hover:bg-zinc-200 dark:hover:text-zinc-900 transition-colors'
                       >
                         <i className='bx bx-file'></i> Read more
                       </a>
@@ -204,16 +204,16 @@ const Research = () => {
 
       {openCitation !== null && (
         <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4' onClick={() => setOpenCitation(null)}>
-          <div className='bg-white dark:bg-slate-900 rounded-lg shadow-lg max-w-3xl w-full p-6 relative' onClick={(e) => e.stopPropagation()}>
+          <div className='bg-white dark:bg-ink-card rounded-lg shadow-lg max-w-3xl w-full p-6 relative' onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setOpenCitation(null)}
-              className='absolute top-4 right-6 text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:hover:text-white text-xl'
+              className='absolute top-4 right-6 text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-white text-xl'
               aria-label='Close'
             >
               &times;
             </button>
             <h3 className='text-lg font-semibold mb-4 text-left dark:text-white'>Citation</h3>
-            <pre className='text-xs text-left leading-relaxed font-mono whitespace-pre-wrap bg-gray-50 dark:bg-slate-800 dark:text-slate-200 p-4 rounded border-t dark:border-slate-700'>
+            <pre className='text-xs text-left leading-relaxed font-mono whitespace-pre-wrap bg-gray-50 dark:bg-ink-raised dark:text-zinc-200 p-4 rounded border-t dark:border-ink-line'>
               {researchItems[openCitation].bibtex}
             </pre>
           </div>

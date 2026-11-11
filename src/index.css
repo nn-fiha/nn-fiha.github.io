@@ -20,7 +20,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 html.dark body {
-  background-color: rgb(2 6 23);
+  background-color: rgb(15 17 21);
 }
 
 code {

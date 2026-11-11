@@ -4,6 +4,7 @@ import ScholarIcon from "../icons/ScholarIcon";
 // Keep this in the same order as the sections on the page.
 const quickLinks = [
   { label: "Home", href: "#home" },
+  { label: "News", href: "#news" },
   { label: "Experience", href: "#experience" },
   { label: "Education", href: "#education" },
   { label: "Publications", href: "#publications" },
@@ -25,7 +26,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-slate-300 w-full">
+    <footer className="bg-slate-900 dark:bg-ink-card text-slate-300 dark:text-zinc-300 w-full">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
@@ -89,7 +90,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="w-9 h-9 inline-flex items-center justify-center rounded-md bg-slate-800 text-slate-300 hover:bg-white hover:text-slate-900 transition-colors"
+                  className="w-9 h-9 inline-flex items-center justify-center rounded-md bg-slate-800 dark:bg-ink-raised text-slate-300 dark:text-zinc-300 hover:bg-white hover:text-slate-900 dark:hover:text-zinc-900 transition-colors"
                 >
                   {s.svg ? <ScholarIcon /> : <i className={`${s.icon} text-lg`}></i>}
                 </a>
@@ -99,7 +100,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 pt-6 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-3">
+        <div className="mt-10 pt-6 border-t border-slate-800 dark:border-ink-line flex flex-col md:flex-row items-center justify-between gap-3">
           <span className="text-xs text-slate-500">
             &copy; {year} Nurun Nahar Fiha. All rights reserved.
           </span>
